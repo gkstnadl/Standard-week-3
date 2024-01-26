@@ -21,6 +21,10 @@ function App() {
   // TODO: filter를 사용하여 minAge 이상의 학생들만 선택하세요.
   const filteredStudents = students.filter((student) => student.age >= minAge);
 
+  const handleInput = (event) => {
+    setMinAge(event.target.value);
+  }
+
   // TODO: map을 사용하여 필터링된 학생들의 정보를 표시하세요.
   const studentList = filteredStudents.map((student, index) => (
     <li key={index}>
@@ -28,12 +32,13 @@ function App() {
     </li>
   ));
 
+
+
   return (
     <div>
       <h1>학생 목록</h1>
       다음 나이 이상의 학생목록만 출력해요 :{" "}
-      {/* TODO: input에 입력된 값(숫자) 이상의 나이를 가진 학생들만 출력하세요. */}
-      <input type="number" /> 살 이상
+      <input type="number" value={minAge} onChange={handleInput} /> 살 이상
       <ul>{studentList}</ul>
     </div>
   );
