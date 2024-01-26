@@ -16,7 +16,7 @@ function App() {
     { name: "Linda", age: 27, grade: "F" },
   ];
 
-  const [minAge, setMinAge] = useState(18);
+  const [minAge, setMinAge] = useState('');
 
   // TODO: filter를 사용하여 minAge 이상의 학생들만 선택하세요.
   const filteredStudents = students.filter((student) => student.age >= minAge);
